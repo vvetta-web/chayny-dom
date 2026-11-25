@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чайный дом — китайский чай в Алматы</title>
+<meta name="description" content="Пуэры, улуны, зелёный и белый чай с прямых поставок из Китая. Доставка по Алматы, заказ в мессенджере.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23B8402B'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' fill='%23F2EEE3' font-family='sans-serif'%3E%E8%8C%B6%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500;600;700;800&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #ECE8DB;
+    --paper-deep: #E3DECF;
+    --ink: #1B1810;
+    --ink-soft: rgba(27, 24, 16, .62);
+    --line: rgba(27, 24, 16, .22);
+    --tea: #3E5B40;
+    --seal: #B8402B;
+    --f-display: "Alumni Sans", "Arial Narrow", sans-serif;
+    --f-text: "Golos Text", system-ui, sans-serif;
+    --f-cjk: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-text);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  /* зерно рисовой бумаги поверх всего */
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    opacity: .05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+    z-index: 50;
+  }
+
+  .screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1720px;
+    margin: 0 auto;
+  }
+
+  /* ---------- шапка ---------- */
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 56px 16px;
+  }
+  .brand {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .brand em { font-style: normal; color: var(--seal); }
+  .nav {
+    display: flex;
+    gap: 34px;
+    margin-left: auto;
+  }
+  .nav a {
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .nav a::after {
+    content: "";
+    position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 1px;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .18s ease-out;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav a:hover { color: var(--ink); }
+    .nav a:hover::after { transform: scaleX(1); }
+  }
+  .top-cta {
+    font-family: var(--f-text);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--paper);
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 12px 26px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .18s ease-out, color .18s ease-out, transform .12s ease-out;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .top-cta:hover { background: transparent; color: var(--ink); }
+    .top-cta:active { transform: scale(.97); }
+  }
+  .rule { height: 1px; background: var(--line); margin: 0 56px; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
+    gap: 24px;
+    padding: 26px 56px 24px;
+    position: relative;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+  }
+  .kicker {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .kicker-seal {
+    width: 26px; height: 26px;
+    background: var(--seal);
+    border-radius: 5px;
+    color: var(--paper);
+    font-family: var(--f-cjk);
+    font-size: 15px;
+    line-height: 26px;
+    text-align: center;
+    flex: none;
+  }
+  h1 {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(80px, 8.2vw, 138px);
+    line-height: .9;
+    letter-spacing: -.005em;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+  h1 .row { display: block; }
+  h1 .row--tea { color: var(--tea); }
+  .lead-rule {
+    width: 128px; height: 1px;
+    background: var(--ink);
+    opacity: .55;
+    margin: 26px 0 18px;
+  }
+  .lead {
+    max-width: 46ch;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    text-wrap: pretty;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .btn {
+    font-family: var(--f-text);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 34px;
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    transition: background .18s ease-out, color .18s ease-out, transform .12s ease-out;
+  }
+  .btn--fill { background: var(--ink); color: var(--paper); }
+  .btn--line { color: var(--ink); background: transparent; }
+  @media (hover: hover) and (pointer: fine) {
+    .btn--fill:hover { background: transparent; color: var(--ink); }
+    .btn--line:hover { background: var(--ink); color: var(--paper); }
+    .btn:active { transform: scale(.97); }
+  }
+
+  .hero-right {
+    position: relative;
+    min-height: 380px;
+  }
+  .img-clip {
+    position: absolute;
+    inset: -3%;
+    width: 106%;
+    height: 106%;
+    overflow: hidden;
+  }
+  .img-clip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% 56%;
+    will-change: transform;
+  }
+  /* вращающаяся печать */
+  .seal {
+    position: absolute;
+    left: -58px;
+    bottom: 44px;
+    width: 150px;
+    height: 150px;
+    z-index: 2;
+    filter: drop-shadow(0 10px 22px rgba(27, 24, 16, .22));
+  }
+  .seal svg { width: 100%; height: 100%; display: block; }
+  .seal .ring { animation: spin 36s linear infinite; transform-origin: 50% 50%; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .seal .ring { animation-duration: 120s; }
+  }
+
+  /* ---------- полоса категорий ---------- */
+  .cats {
+    border-top: 1px solid var(--line);
+    margin: 0 56px;
+    padding-bottom: 22px;
+  }
+  .cats-row {
+    display: grid;
+    grid-template-columns: 1.05fr 1.05fr 1.25fr;
+    gap: 24px;
+  }
+  .cats-row + .cats-row { border-top: 1px solid var(--line); }
+  .cat {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 17px 0;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .cat img {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: none;
+    filter: saturate(.92);
+    transition: transform .18s ease-out;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .cat:hover img { transform: scale(1.08); }
+    .cat:hover .cat-name { color: var(--tea); }
+  }
+  .cat-name {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(26px, 2.3vw, 36px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    transition: color .18s ease-out;
+  }
+  .cat-note {
+    display: block;
+    font-family: var(--f-text);
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--ink-soft);
+    margin-top: 5px;
+  }
+  .cats-all {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 17px 0;
+    font-size: 15px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .cats-all .arr { display: inline-block; margin-left: 10px; transition: transform .18s ease-out; }
+  @media (hover: hover) and (pointer: fine) {
+    .cats-all:hover { color: var(--tea); }
+    .cats-all:hover .arr { transform: translateX(6px); }
+  }
+
+  /* ---------- телефон ---------- */
+  @media (max-width: 900px) {
+    .top { padding: 16px 20px 12px; gap: 16px; }
+    .nav { display: none; }
+    .top-cta { margin-left: auto; padding: 10px 18px; font-size: 13px; }
+    .rule { margin: 0 20px; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 26px 20px 26px;
+    }
+    .hero-left { max-width: none; }
+    .kicker { font-size: 12px; margin-bottom: 18px; }
+    h1 { font-size: clamp(56px, 15.5vw, 96px); }
+    .lead-rule { margin: 22px 0 16px; }
+    .lead { font-size: 16px; }
+    .actions { margin-top: 24px; }
+    .btn { padding: 15px 28px; font-size: 15px; }
+
+    .hero-right { min-height: 0; aspect-ratio: 4 / 5; }
+    .seal { width: 112px; height: 112px; left: 14px; top: 14px; bottom: auto; }
+    .seal .ring text { font-size: 13.5; letter-spacing: 2.2; }
+
+    .cats { margin: 0 20px; padding-bottom: 26px; }
+    .cats-row { grid-template-columns: 1fr; gap: 0; }
+    .cats-row + .cats-row { border-top: 0; }
+    .cat { padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .cat img { width: 46px; height: 46px; }
+    .cat-name { font-size: 26px; }
+    .cats-all { justify-content: flex-start; padding: 18px 0 4px; }
+  }
+
+  @media (max-width: 420px) {
+    .actions { flex-direction: column; align-items: stretch; }
+    .btn { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="screen">
+
+  <header class="top">
+    <a class="brand" href="#">Чайный <em>дом</em></a>
+    <nav class="nav">
+      <a href="#catalog">Каталог</a>
+      <a href="#sets">Наборы</a>
+      <a href="#about">О чае</a>
+      <a href="#delivery">Доставка</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="top-cta" href="#order">Написать нам</a>
+  </header>
+  <div class="rule"></div>
+
+  <main class="hero">
+    <div class="hero-left">
+      <p class="kicker"><span class="kicker-seal">茶</span> Магазин китайского чая · Алматы</p>
+      <h1>
+        <span class="row">Китайский</span>
+        <span class="row row--tea">чай</span>
+        <span class="row">в Алматы</span>
+      </h1>
+      <div class="lead-rule"></div>
+      <p class="lead">Пуэры, улуны и зелёные сборы с прямых поставок из Китая. Поможем выбрать и доставим по городу — заказ оформляется в мессенджере.</p>
+      <div class="actions">
+        <a class="btn btn--fill" href="#catalog">Смотреть чай</a>
+        <a class="btn btn--line" href="#order">Заказать</a>
+      </div>
+    </div>
+
+    <div class="hero-right" id="heroRight">
+      <div class="img-clip">
+        <img id="heroImg" src="assets/hero.webp" alt="Натюрморт: чайник и пиалы на фоне чайных ветвей и гор" width="1200" height="1600">
+      </div>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 150 150">
+          <circle cx="75" cy="75" r="74" fill="#ECE8DB"/>
+          <circle cx="75" cy="75" r="74" fill="none" stroke="#1B1810" stroke-opacity=".25"/>
+          <g class="ring">
+            <path id="sealCircle" d="M75,75 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0" fill="none"/>
+            <text font-family="Golos Text, sans-serif" font-size="12.5" letter-spacing="2.6" fill="#1B1810">
+              <textPath href="#sealCircle">ЧАЙНЫЙ ДОМ · АЛМАТЫ · ДОСТАВКА ПО ГОРОДУ ·</textPath>
+            </text>
+          </g>
+          <rect x="53" y="53" width="44" height="44" rx="7" fill="#B8402B"/>
+          <text x="75" y="85" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="30" text-anchor="middle" fill="#F2EEE3">茶</text>
+        </svg>
+      </div>
+    </div>
+  </main>
+
+  <section class="cats" id="catalog">
+    <div class="cats-row">
+      <a class="cat" href="#catalog">
+        <img src="assets/cat-puer.webp" alt="Чайник пуэра" width="52" height="52">
+        <span class="cat-name">Пуэры</span>
+      </a>
+      <a class="cat" href="#catalog">
+        <img src="assets/cat-oolong.webp" alt="Листья улуна" width="52" height="52">
+        <span class="cat-name">Улуны</span>
+      </a>
+      <a class="cat" href="#catalog">
+        <img src="assets/cat-green.webp" alt="Чайная ветвь" width="52" height="52">
+        <span class="cat-name">Зелёный и белый</span>
+      </a>
+    </div>
+    <div class="cats-row">
+      <a class="cat" href="#catalog">
+        <img src="assets/cat-blend.webp" alt="Пиала с чаем" width="52" height="52">
+        <span class="cat-name">Смеси</span>
+      </a>
+      <a class="cat" href="#catalog">
+        <img src="assets/cat-gift.webp" alt="Горный пейзаж" width="52" height="52">
+        <span class="cat-name">Подарочные наборы</span>
+      </a>
+      <a class="cats-all" href="#catalog">Около 50 позиций в каталоге <span class="arr">→</span></a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // лёгкий параллакс иллюстрации за курсором — только transform, только десктоп
+  (function () {
+    var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!fine || reduced) return;
+    var wrap = document.getElementById("heroRight");
+    var img = document.getElementById("heroImg");
+    var tx = 0, ty = 0, cx = 0, cy = 0;
+    wrap.addEventListener("mousemove", function (e) {
+      var r = wrap.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width - .5) * -14;
+      ty = ((e.clientY - r.top) / r.height - .5) * -10;
+    });
+    wrap.addEventListener("mouseleave", function () { tx = 0; ty = 0; });
+    (function tick() {
+      cx += (tx - cx) * .06;
+      cy += (ty - cy) * .06;
+      img.style.transform = "translate3d(" + cx.toFixed(2) + "px," + cy.toFixed(2) + "px,0)";
+      requestAnimationFrame(tick);
+    })();
+  })();
+</script>
+</body>
+</html>
