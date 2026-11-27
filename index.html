@@ -457,8 +457,8 @@
   .sets-media { position: sticky; top: 32px; }
   .sets-media img {
     width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
+    height: auto;
+    display: block;
     border: 1px solid var(--line);
   }
   .set-list { list-style: none; margin-top: 8px; }
@@ -665,7 +665,6 @@
 
     .sets-grid { grid-template-columns: 1fr; gap: 34px; }
     .sets-media { position: static; }
-    .sets-media img { aspect-ratio: 4 / 3; }
     .set-item { grid-template-columns: 1fr; gap: 10px; }
     .set-order { grid-column: 1; justify-self: start; }
     .set-price { font-size: 20px; }
