@@ -619,6 +619,44 @@
   .footer-note { width: 100%; font-size: 13px; color: var(--ink-soft); }
   .footer-copy { font-size: 13px; color: var(--ink-soft); }
 
+  /* ---------- анимации (только десктоп) ---------- */
+  @media (min-width: 901px) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .6s ease-out, transform .6s ease-out;
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+    .reveal.is-in { opacity: 1; transform: none; }
+
+    /* вход первого экрана при загрузке */
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .hero-left > * { animation: heroIn .7s ease-out both; }
+    .hero-left > *:nth-child(1) { animation-delay: .05s; }
+    .hero-left > *:nth-child(2) { animation-delay: .15s; }
+    .hero-left > *:nth-child(3) { animation-delay: .25s; }
+    .hero-left > *:nth-child(4) { animation-delay: .35s; }
+    .hero-left > *:nth-child(5) { animation-delay: .45s; }
+    .img-clip { animation: heroIn .9s ease-out .2s both; }
+    .seal { animation: heroIn .7s ease-out .55s both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-left > *, .img-clip, .seal { animation: none; }
+    }
+
+    /* наведение на карточку каталога */
+    .product img { transition: transform .25s ease-out; }
+    @media (hover: hover) and (pointer: fine) {
+      .product:hover img { transform: scale(1.035); }
+      .product h3 { transition: color .18s ease-out; }
+      .product:hover h3 { color: var(--tea); }
+    }
+  }
+
   /* ---------- телефон ---------- */
   @media (max-width: 900px) {
     .top { padding: 16px 20px 12px; gap: 16px; }
@@ -1144,6 +1182,44 @@
         preview.innerHTML = "В мессенджер уйдёт сообщение: «Здравствуйте! Хочу заказать: <b>" + name + "</b>»";
       });
     });
+  })();
+
+  // появление блоков при скролле (десктоп)
+  (function () {
+    var fine = window.matchMedia("(min-width: 901px)").matches;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!fine || reduced) return;
+    var groups = [
+      ".sec-head",
+      ".adv-row",
+      ".set-item",
+      ".step",
+      ".sets-media",
+      ".about-tabs",
+      ".about-panels",
+      ".contacts-inner > *",
+      ".footer > *"
+    ];
+    var els = [];
+    groups.forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el) { els.push(el); });
+    });
+    // карточки каталога - со стаггером по рядам
+    var cards = document.querySelectorAll(".product");
+    cards.forEach(function (el, i) {
+      el.style.setProperty("--reveal-delay", (i % 4) * 70 + "ms");
+      els.push(el);
+    });
+    els.forEach(function (el) { el.classList.add("reveal"); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add("is-in");
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: .12, rootMargin: "0px 0px -4% 0px" });
+    els.forEach(function (el) { io.observe(el); });
   })();
 </script>
 </body>
