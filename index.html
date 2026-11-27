@@ -296,6 +296,327 @@
     .cats-all:hover .arr { transform: translateX(6px); }
   }
 
+  /* ---------- общее для блоков ---------- */
+  .sec {
+    padding: 88px 56px 80px;
+    border-top: 1px solid var(--line);
+  }
+  .sec-head { margin-bottom: 52px; max-width: 760px; }
+  .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+  .sec-label::before {
+    content: "";
+    width: 26px; height: 26px;
+    background: var(--seal);
+    border-radius: 5px;
+    flex: none;
+  }
+  .sec h2 {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(40px, 4.6vw, 68px);
+    line-height: .95;
+    text-transform: uppercase;
+    letter-spacing: -.005em;
+    text-wrap: balance;
+  }
+
+  /* ---------- блок 2: преимущества ---------- */
+  .adv-list { max-width: 980px; }
+  .adv-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 28px;
+    padding: 34px 0;
+    border-top: 1px solid var(--line);
+  }
+  .adv-row:nth-child(even) { margin-left: clamp(0px, 8vw, 160px); }
+  .adv-num {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--tea);
+  }
+  .adv-body h3 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(24px, 2.2vw, 32px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .adv-body p { max-width: 52ch; color: var(--ink-soft); text-wrap: pretty; }
+
+  /* ---------- блок 3: каталог ---------- */
+  .sec-head--row {
+    max-width: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .sec-note { max-width: 34ch; font-size: 14px; color: var(--ink-soft); padding-bottom: 6px; }
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .pill {
+    font-family: var(--f-text);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background .18s ease-out, color .18s ease-out, border-color .18s ease-out;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .pill:hover { border-color: var(--ink); }
+  }
+  .pill.is-on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 40px 28px;
+  }
+  .product.is-hidden { display: none; }
+  .product img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: var(--paper-deep);
+    border: 1px solid var(--line);
+    margin-bottom: 18px;
+  }
+  .product h3 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .product .taste {
+    font-size: 14px;
+    color: var(--ink-soft);
+    min-height: 3em;
+    text-wrap: pretty;
+  }
+  .p-foot {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 14px 0 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .price { font-family: var(--f-display); font-weight: 800; font-size: 24px; }
+  .weight { font-size: 13px; color: var(--ink-soft); }
+  .p-order {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--paper);
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: background .18s ease-out, color .18s ease-out, transform .12s ease-out;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .p-order:hover { background: transparent; color: var(--ink); }
+    .p-order:active { transform: scale(.97); }
+  }
+  .catalog-note {
+    margin-top: 44px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+
+  /* ---------- блок 4: наборы ---------- */
+  .sets-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .sets-media { position: sticky; top: 32px; }
+  .sets-media img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+  .set-list { list-style: none; margin-top: 8px; }
+  .set-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 28px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .set-item h3 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(22px, 2vw, 28px);
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+  .set-item p { font-size: 14px; color: var(--ink-soft); max-width: 46ch; }
+  .set-price {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: 24px;
+    white-space: nowrap;
+  }
+  .set-order {
+    grid-column: 2;
+    justify-self: end;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    transition: color .18s ease-out, border-color .18s ease-out;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .set-order:hover { color: var(--tea); border-color: var(--tea); }
+  }
+
+  /* ---------- блок 5: о чае ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 34fr) minmax(0, 66fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .about-tabs { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; position: sticky; top: 32px; }
+  .about-tab {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(28px, 2.6vw, 40px);
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 4px 0;
+    cursor: pointer;
+    transition: color .18s ease-out, border-color .18s ease-out;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .about-tab:hover { color: var(--ink); }
+  }
+  .about-tab.is-on { color: var(--ink); border-bottom-color: var(--seal); }
+  .about-panel { display: none; grid-template-columns: minmax(0, 46fr) minmax(0, 54fr); gap: 40px; align-items: start; }
+  .about-panel.is-on { display: grid; }
+  .about-panel img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--paper-deep);
+  }
+  .about-panel h3 {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(28px, 2.6vw, 40px);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .about-panel p { color: var(--ink-soft); text-wrap: pretty; max-width: 52ch; }
+
+  /* ---------- блок 6: как заказать ---------- */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+  }
+  .step { border-top: 1px solid var(--ink); padding-top: 24px; }
+  .step-num {
+    display: block;
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(56px, 5vw, 84px);
+    line-height: 1;
+    color: var(--tea);
+    margin-bottom: 18px;
+  }
+  .step h3 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(22px, 1.9vw, 28px);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .step p { font-size: 15px; color: var(--ink-soft); max-width: 34ch; text-wrap: pretty; }
+
+  /* ---------- блок 7: контакты и подвал ---------- */
+  .contacts { padding-bottom: 0; }
+  .contacts-inner { max-width: 900px; }
+  .contacts h2 {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(52px, 6vw, 96px);
+    line-height: .92;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+  }
+  .contacts-lead { font-size: 17px; color: var(--ink-soft); max-width: 46ch; text-wrap: pretty; }
+  .contacts-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 36px;
+  }
+  .contacts-city { font-size: 14px; color: var(--ink-soft); }
+  .order-preview {
+    margin-top: 26px;
+    padding: 18px 22px;
+    border: 1px solid var(--line);
+    background: var(--paper-deep);
+    font-size: 15px;
+    max-width: 560px;
+  }
+  .order-preview b { font-weight: 500; color: var(--tea); }
+  .footer {
+    margin-top: 80px;
+    border-top: 1px solid var(--line);
+    padding: 36px 0 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px 40px;
+  }
+  .footer .brand { font-size: 18px; }
+  .footer-nav { display: flex; gap: 24px; margin-left: auto; }
+  .footer-nav a { font-size: 13px; color: var(--ink-soft); text-decoration: none; }
+  @media (hover: hover) and (pointer: fine) {
+    .footer-nav a:hover { color: var(--ink); }
+  }
+  .footer-note { width: 100%; font-size: 13px; color: var(--ink-soft); }
+  .footer-copy { font-size: 13px; color: var(--ink-soft); }
+
   /* ---------- телефон ---------- */
   @media (max-width: 900px) {
     .top { padding: 16px 20px 12px; gap: 16px; }
@@ -327,6 +648,42 @@
     .cat img { width: 46px; height: 46px; }
     .cat-name { font-size: 26px; }
     .cats-all { justify-content: flex-start; padding: 18px 0 4px; }
+    .sec { padding: 56px 20px 52px; }
+    .sec-head { margin-bottom: 34px; }
+    .sec-head--row { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .sec-note { padding-bottom: 0; }
+
+    .adv-row { grid-template-columns: 52px 1fr; gap: 16px; padding: 24px 0; }
+    .adv-row:nth-child(even) { margin-left: 0; }
+    .adv-num { font-size: 44px; }
+
+    .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 16px; }
+    .product h3 { font-size: 19px; }
+    .price { font-size: 20px; }
+    .filter { gap: 8px; margin-bottom: 28px; }
+    .pill { padding: 9px 15px; font-size: 13px; }
+
+    .sets-grid { grid-template-columns: 1fr; gap: 34px; }
+    .sets-media { position: static; }
+    .sets-media img { aspect-ratio: 4 / 3; }
+    .set-item { grid-template-columns: 1fr; gap: 10px; }
+    .set-order { grid-column: 1; justify-self: start; }
+    .set-price { font-size: 20px; }
+
+    .about-grid { grid-template-columns: 1fr; gap: 28px; }
+    .about-tabs { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px 20px; }
+    .about-tab { font-size: 24px; border-bottom-width: 2px; }
+    .about-tab.is-on { border-bottom-color: var(--seal); }
+    .about-panel { grid-template-columns: 1fr; gap: 20px; }
+    .about-panel img { max-width: 320px; }
+
+    .steps-grid { grid-template-columns: 1fr; gap: 30px; }
+    .step p { max-width: none; }
+
+    .contacts-actions { align-items: stretch; flex-direction: column; }
+    .contacts-city { padding-top: 4px; }
+    .footer { gap: 14px 20px; }
+    .footer-nav { margin-left: 0; flex-wrap: wrap; }
   }
 
   @media (max-width: 420px) {
@@ -416,6 +773,306 @@
     </div>
   </section>
 
+  <!-- блок 2: преимущества -->
+  <section class="sec adv" id="advantages">
+    <div class="sec-head">
+      <p class="sec-label">Почему «Чайный дом»</p>
+      <h2>Четыре причины<br>заваривать с нами</h2>
+    </div>
+    <div class="adv-list">
+      <div class="adv-row">
+        <span class="adv-num">1</span>
+        <div class="adv-body">
+          <h3>Прямые поставки из Китая</h3>
+          <p>Закупаем чай у проверенных ферм Юньнани, Фуцзяни и Уи-гор. Без посредников и лишних наценок.</p>
+        </div>
+      </div>
+      <div class="adv-row">
+        <span class="adv-num">2</span>
+        <div class="adv-body">
+          <h3>Доставка по Алматы</h3>
+          <p>Привезём заказ по городу. Условия, зоны и время доставки подтвердим при заказе в мессенджере.</p>
+        </div>
+      </div>
+      <div class="adv-row">
+        <span class="adv-num">3</span>
+        <div class="adv-body">
+          <h3>Поможем с выбором</h3>
+          <p>Не знаете, с чего начать? Расскажем про вкусы и крепость и подберём чай под ваш вкус и бюджет.</p>
+        </div>
+      </div>
+      <div class="adv-row">
+        <span class="adv-num">4</span>
+        <div class="adv-body">
+          <h3>Подарочная упаковка</h3>
+          <p>Упакуем любой заказ в крафтовую коробку с нашей печатью - готово к вручению без лишней обёртки.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок 3: каталог -->
+  <section class="sec catalog" id="catalog">
+    <div class="sec-head sec-head--row">
+      <div>
+        <p class="sec-label">Каталог</p>
+        <h2>Около 50 позиций.<br>Начните с этих</h2>
+      </div>
+      <p class="sec-note">Полный ассортимент заведём в каталог по вашей таблице: цены, описания и наличие будете менять сами, без правки дизайна.</p>
+    </div>
+    <div class="filter" id="filter">
+      <button class="pill is-on" data-filter="all">Все</button>
+      <button class="pill" data-filter="puer">Пуэры</button>
+      <button class="pill" data-filter="oolong">Улуны</button>
+      <button class="pill" data-filter="green">Зелёный и белый</button>
+      <button class="pill" data-filter="blend">Смеси</button>
+    </div>
+    <div class="products" id="products">
+      <article class="product" data-cat="puer">
+        <img src="assets/cat-puer.webp" alt="Керамический чайник, пуэр" width="208" height="208">
+        <h3>Шу пуэр «Менку»</h3>
+        <p class="taste">Ореховый, гладкий, с нотой земли после дождя</p>
+        <div class="p-foot"><span class="price">4 200 ₸</span><span class="weight">100 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Шу пуэр «Менку»">Заказать</a>
+      </article>
+      <article class="product" data-cat="puer">
+        <img src="assets/cat-puer.webp" alt="Керамический чайник, шэн пуэр" width="208" height="208">
+        <h3>Шэн пуэр «Иу Лао Шань»</h3>
+        <p class="taste">Терпкий, с нотой инжира и лёгкой камфоры</p>
+        <div class="p-foot"><span class="price">6 800 ₸</span><span class="weight">100 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Шэн пуэр «Иу Лао Шань»">Заказать</a>
+      </article>
+      <article class="product" data-cat="puer">
+        <img src="assets/cat-puer.webp" alt="Прессованный пуэр в мини-точа" width="208" height="208">
+        <h3>Пуэр «Точа» мини</h3>
+        <p class="taste">Мягкий и тёмный, удобно заваривать на работе</p>
+        <div class="p-foot"><span class="price">2 900 ₸</span><span class="weight">5 шт × 8 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Пуэр «Точа» мини">Заказать</a>
+      </article>
+      <article class="product" data-cat="puer">
+        <img src="assets/cat-puer.webp" alt="Банка с чаем «Гунтин»" width="208" height="208">
+        <h3>Шу пуэр «Гунтин»</h3>
+        <p class="taste">Почки с почек, сладковатый, густой настой</p>
+        <div class="p-foot"><span class="price">5 400 ₸</span><span class="weight">100 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Шу пуэр «Гунтин»">Заказать</a>
+      </article>
+      <article class="product" data-cat="oolong">
+        <img src="assets/cat-oolong.webp" alt="Пиала с улуном Те Гуань Инь" width="208" height="208">
+        <h3>Те Гуань Инь «Анкси»</h3>
+        <p class="taste">Зелёный улун, молочно-цветочный аромат</p>
+        <div class="p-foot"><span class="price">3 600 ₸</span><span class="weight">50 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Те Гуань Инь «Анкси»">Заказать</a>
+      </article>
+      <article class="product" data-cat="oolong">
+        <img src="assets/cat-oolong.webp" alt="Пиала с Да Хун Пао" width="208" height="208">
+        <h3>Да Хун Пао «Уи»</h3>
+        <p class="taste">Прожаренный, минеральный, с нотой какао</p>
+        <div class="p-foot"><span class="price">5 900 ₸</span><span class="weight">50 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Да Хун Пао «Уи»">Заказать</a>
+      </article>
+      <article class="product" data-cat="oolong">
+        <img src="assets/cat-oolong.webp" alt="Пиала с молочным улуном" width="208" height="208">
+        <h3>Улун «Цзинь Сюань»</h3>
+        <p class="taste">Молочный, сливочный, мягкий - хорош вечером</p>
+        <div class="p-foot"><span class="price">3 200 ₸</span><span class="weight">50 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Улун «Цзинь Сюань» (молочный)">Заказать</a>
+      </article>
+      <article class="product" data-cat="oolong">
+        <img src="assets/cat-oolong.webp" alt="Пиала с чаем Фэн Хуан Дань Цун" width="208" height="208">
+        <h3>Фэн Хуан Дань Цун</h3>
+        <p class="taste">Медовый и фруктовый, с высокогорных деревьев</p>
+        <div class="p-foot"><span class="price">7 400 ₸</span><span class="weight">50 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Фэн Хуан Дань Цун">Заказать</a>
+      </article>
+      <article class="product" data-cat="green">
+        <img src="assets/cat-green.webp" alt="Чайная ветвь, сенча" width="208" height="208">
+        <h3>Сенча «Удзи»</h3>
+        <p class="taste">Яркая, травянистая, с морскими нотами</p>
+        <div class="p-foot"><span class="price">2 800 ₸</span><span class="weight">50 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Сенча «Удзи»">Заказать</a>
+      </article>
+      <article class="product" data-cat="green">
+        <img src="assets/cat-green.webp" alt="Чайная ветвь, Би Ло Чунь" width="208" height="208">
+        <h3>Би Ло Чунь</h3>
+        <p class="taste">Нежный, весенний, с фруктовой сладостью</p>
+        <div class="p-foot"><span class="price">4 600 ₸</span><span class="weight">50 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Би Ло Чунь">Заказать</a>
+      </article>
+      <article class="product" data-cat="green">
+        <img src="assets/cat-green.webp" alt="Чайная ветвь, Бай Му Дань" width="208" height="208">
+        <h3>Бай Му Дань «Белый пион»</h3>
+        <p class="taste">Белый чай, мягкий, с нотами мёда и дыни</p>
+        <div class="p-foot"><span class="price">4 100 ₸</span><span class="weight">50 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Бай Му Дань «Белый пион»">Заказать</a>
+      </article>
+      <article class="product" data-cat="green">
+        <img src="assets/cat-green.webp" alt="Чайная ветвь, ганпаудер" width="208" height="208">
+        <h3>Ганпаудер «Порох»</h3>
+        <p class="taste">Плотный, дымно-терпкий, бодрящий</p>
+        <div class="p-foot"><span class="price">2 400 ₸</span><span class="weight">100 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Ганпаудер «Порох»">Заказать</a>
+      </article>
+      <article class="product" data-cat="blend">
+        <img src="assets/cat-blend.webp" alt="Горы в дымке, смесь «Горный утёс»" width="208" height="208">
+        <h3>Смесь «Горный утёс»</h3>
+        <p class="taste">Улун и пуэр вместе, насыщенный и согревающий</p>
+        <div class="p-foot"><span class="price">3 800 ₸</span><span class="weight">100 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Смесь «Горный утёс»">Заказать</a>
+      </article>
+      <article class="product" data-cat="blend">
+        <img src="assets/cat-blend.webp" alt="Горы в дымке, смесь «Сад у дома»" width="208" height="208">
+        <h3>Смесь «Сад у дома»</h3>
+        <p class="taste">Зелёная основа, лепестки и цитрусовая цедра</p>
+        <div class="p-foot"><span class="price">3 100 ₸</span><span class="weight">100 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Смесь «Сад у дома»">Заказать</a>
+      </article>
+      <article class="product" data-cat="blend">
+        <img src="assets/cat-blend.webp" alt="Горы в дымке, смесь «Вечер в горах»" width="208" height="208">
+        <h3>Смесь «Вечер в горах»</h3>
+        <p class="taste">Тёплая, с шалфеем и облепихой - на прохладный вечер</p>
+        <div class="p-foot"><span class="price">3 400 ₸</span><span class="weight">100 г</span></div>
+        <a class="p-order" href="#contacts" data-name="Смесь «Вечер в горах»">Заказать</a>
+      </article>
+    </div>
+    <p class="catalog-note">Позиции и цены на странице - демонстрационные: показываем, как будет выглядеть и работать каталог. Перед сдачей заменим вашей таблицей ассортимента.</p>
+  </section>
+
+  <!-- блок 4: подарочные наборы -->
+  <section class="sec sets" id="sets">
+    <div class="sets-grid">
+      <div class="sets-media">
+        <img src="assets/sets.webp" alt="Подарочная коробка с банками чая и пиалой" width="1200" height="1600">
+      </div>
+      <div class="sets-body">
+        <p class="sec-label">Подарочные наборы</p>
+        <h2>Подарок, который<br>заваривают</h2>
+        <ul class="set-list">
+          <li class="set-item">
+            <div>
+              <h3>Набор «Знакомство»</h3>
+              <p>Четыре мини-пачки по 25 г: шу пуэр, улун, зелёный и белый чай. Для тех, кто выбирает первый раз.</p>
+            </div>
+            <span class="set-price">6 900 ₸</span>
+            <a class="set-order" href="#contacts" data-name="Набор «Знакомство»">Заказать</a>
+          </li>
+          <li class="set-item">
+            <div>
+              <h3>Набор «Горы Уи»</h3>
+              <p>Да Хун Пао «Уи», чайник-гайвань на 100 мл и две пиалы. Праздничная коробка с печатью.</p>
+            </div>
+            <span class="set-price">14 500 ₸</span>
+            <a class="set-order" href="#contacts" data-name="Набор «Горы Уи»">Заказать</a>
+          </li>
+          <li class="set-item">
+            <div>
+              <h3>Набор «Большой»</h3>
+              <p>Выбор чая на 500 г по вашим пожеланиям в крафтовой коробке. Состав согласуем в переписке.</p>
+            </div>
+            <span class="set-price">12 900 ₸</span>
+            <a class="set-order" href="#contacts" data-name="Набор «Большой»">Заказать</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок 5: о чае -->
+  <section class="sec about" id="about">
+    <div class="sec-head">
+      <p class="sec-label">О чае</p>
+      <h2>Четыре характера<br>в одной чашке</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-tabs" role="tablist" aria-label="Виды чая">
+        <button class="about-tab is-on" data-tab="puerh" role="tab" aria-selected="true">Пуэр</button>
+        <button class="about-tab" data-tab="oolong" role="tab" aria-selected="false">Улун</button>
+        <button class="about-tab" data-tab="green" role="tab" aria-selected="false">Зелёный</button>
+        <button class="about-tab" data-tab="white" role="tab" aria-selected="false">Белый</button>
+      </div>
+      <div class="about-panels">
+        <div class="about-panel is-on" data-panel="puerh">
+          <img src="assets/cat-puer.webp" alt="Чайник и пиалы, пуэр" width="208" height="208">
+          <div>
+            <h3>Пуэр</h3>
+            <p>Единственный чай, который улучшается с годами. Прессованные листья с юга Юньнани дают глубокий настой: шу пуэр тёмный и мягкий, шэн - терпкий и живой. Заваривается много раз, каждая заварка звучит тише предыдущей.</p>
+          </div>
+        </div>
+        <div class="about-panel" data-panel="oolong">
+          <img src="assets/cat-oolong.webp" alt="Пиала с улуном" width="208" height="208">
+          <div>
+            <h3>Улун</h3>
+            <p>Полуферментированный чай - между зелёным и красным. От лёгкого, цветочного Те Гуань Иня до тяжело прожаренного Да Хун Пао с Уи-гор: минеральный, с нотой какао и жареного зерна.</p>
+          </div>
+        </div>
+        <div class="about-panel" data-panel="green">
+          <img src="assets/cat-green.webp" alt="Чайная ветвь" width="208" height="208">
+          <div>
+            <h3>Зелёный</h3>
+            <p>Самый живой чай: лист заваривают сразу после сборки. Травянистая свежесть, морские ноты, лёгкая горчинка в конце. Не любит кипяток - лучше вода градусов 80 и короткая заварка.</p>
+          </div>
+        </div>
+        <div class="about-panel" data-panel="white">
+          <img src="assets/cat-gift.webp" alt="Почки чайной ветви" width="208" height="208">
+          <div>
+            <h3>Белый</h3>
+            <p>Минимум обработки: лист сушат и оставляют в покое. Мягкий, с нотами мёда и дыни. Прощает любые ошибки заварки - не заваришь крепче, чем он сам хочет.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок 6: как заказать -->
+  <section class="sec steps" id="delivery">
+    <div class="sec-head">
+      <p class="sec-label">Как заказать и доставка</p>
+      <h2>Три шага до чашки</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h3>Выберите чай</h3>
+        <p>Листайте каталог, фильтруйте по категориям - или напишите нам, поможем подобрать под вкус и повод.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h3>Напишите в мессенджер</h3>
+        <p>Кнопка «Заказать» подставит название товара в сообщение. Останется нажать «Отправить».</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h3>Получите доставку</h3>
+        <p>Зоны, стоимость и время доставки по Алматы подтвердим при заказе. Оплата - как договоримся.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок 7: контакты и подвал -->
+  <section class="sec contacts" id="contacts">
+    <div class="contacts-inner">
+      <p class="sec-label">Контакты</p>
+      <h2>Напишите нам</h2>
+      <p class="contacts-lead">Ответим в мессенджере, поможем определиться с чаем и оформим доставку по Алматы.</p>
+      <div class="contacts-actions">
+        <a class="btn btn--fill" href="#" id="messengerBtn" data-slot="ссылка на мессенджер заказчика">Написать в мессенджер</a>
+        <span class="contacts-city">Алматы · доставка по городу</span>
+      </div>
+      <p class="order-preview" id="orderPreview">Кнопка «Заказать» в каталоге соберёт здесь сообщение: «Здравствуйте! Хочу заказать: <b>…</b>»</p>
+    </div>
+    <footer class="footer">
+      <a class="brand" href="#">Чайный <em>дом</em></a>
+      <nav class="footer-nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#sets">Наборы</a>
+        <a href="#about">О чае</a>
+        <a href="#delivery">Доставка</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <p class="footer-note">Демо-версия сайта: ассортимент, цены и наборы показаны для примера.</p>
+      <p class="footer-copy">© 2026 Чайный дом, Алматы</p>
+    </footer>
+  </section>
+
 </div>
 
 <script>
@@ -439,6 +1096,52 @@
       img.style.transform = "translate3d(" + cx.toFixed(2) + "px," + cy.toFixed(2) + "px,0)";
       requestAnimationFrame(tick);
     })();
+  })();
+
+  // фильтр каталога
+  (function () {
+    var pills = document.querySelectorAll(".pill");
+    var items = document.querySelectorAll(".product");
+    pills.forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        pills.forEach(function (p) { p.classList.remove("is-on"); });
+        pill.classList.add("is-on");
+        var f = pill.getAttribute("data-filter");
+        items.forEach(function (it) {
+          it.classList.toggle("is-hidden", f !== "all" && it.getAttribute("data-cat") !== f);
+        });
+      });
+    });
+  })();
+
+  // табы «О чае»
+  (function () {
+    var tabs = document.querySelectorAll(".about-tab");
+    var panels = document.querySelectorAll(".about-panel");
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var key = tab.getAttribute("data-tab");
+        tabs.forEach(function (t) {
+          var on = t === tab;
+          t.classList.toggle("is-on", on);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        panels.forEach(function (pn) {
+          pn.classList.toggle("is-on", pn.getAttribute("data-panel") === key);
+        });
+      });
+    });
+  })();
+
+  // кнопка «Заказать»: собирает текст сообщения
+  (function () {
+    var preview = document.getElementById("orderPreview");
+    document.querySelectorAll("[data-name]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var name = btn.getAttribute("data-name");
+        preview.innerHTML = "В мессенджер уйдёт сообщение: «Здравствуйте! Хочу заказать: <b>" + name + "</b>»";
+      });
+    });
   })();
 </script>
 </body>
